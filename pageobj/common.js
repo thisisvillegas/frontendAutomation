@@ -9,6 +9,24 @@ class Common {
         this.logInButton = element(by.className('login-text'));
         this.addButton =  element(by.className('add-button'))
         this.saveButton =  element(by.buttonText('Save'))
+        this.goalsMenuButton = element(by.buttonText('Goals'))
+        this.preretirementMenuButton = element(
+            by.xpath(
+              "/html/body/div/div/div[2]/div[5]/div/div/div[2]/div/div[2]/div/div[2]/div/ul/li[1]/div"
+            )
+          )
+        this.incomeMenuButton = element(by.buttonText('Income'))
+        this.employmentMenuButton = element(
+            by.xpath(
+              "/html/body/div/div/div[2]/div[5]/div/div/div[2]/div/div[2]/div/div[2]/div/div/ul/li[1]"
+            )
+          )
+        this.insuranceMenuButton = element(by.buttonText('Insurance'))
+        this.termlifeMenuButton = element(
+            by.xpath(
+              "/html/body/div/div/div[2]/div[5]/div/div/div[2]/div/div[2]/div/div[2]/div/div/ul/li[1]"
+            )
+          )
 	}
 
 	goToUrl(url) {
@@ -26,6 +44,25 @@ class Common {
     async clickSaveButton() {
         Logger.info('Clicking Save button')
         const el = this.saveButton
+        browser.wait(EC.elementToBeClickable(el));
+		await el.click();
+    }    
+    
+    async clickGoalsMenuButton() {
+        Logger.info('Clicking Goals Menu Button')
+        const el = this.goalsMenuButton
+        browser.wait(EC.elementToBeClickable(el));
+		await el.click();
+    }
+    async clickIncomeMenuButton() {
+        Logger.info('Clicking Income Menu Button')
+        const el = this.incomeMenuButton
+        browser.wait(EC.elementToBeClickable(el));
+		await el.click();
+    }
+    async clickInsuranceMenuButton() {
+        Logger.info('Clicking Insurance Menu Button')
+        const el = this.insuranceMenuButton
         browser.wait(EC.elementToBeClickable(el));
 		await el.click();
     }
