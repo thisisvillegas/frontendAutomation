@@ -1,0 +1,25 @@
+{
+  "name": "automationexample",
+  "version": "1.0.0",
+  "description": "sdsfsf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thisisvillegas/automationExample.git"
+  },
+  "author": "Andres Villegas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thisisvillegas/automationExample/issues"
+  },
+  "homepage": "https://github.com/thisisvillegas/automationExample#readme",
+  "dependencies": {
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-reporters": "^2.3.2",
+    "log4js": "^6.3.0",
+    "protractor-jasmine2-screenshot-reporter": "^0.5.0"
+  }
+}
