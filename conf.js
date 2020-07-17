@@ -27,8 +27,7 @@ exports.config = {
     onPrepare: async function() {
         jasmine.getEnv().addReporter(reporter);
         jasmine.getEnv().addReporter(reporterJasmine);
-        
-        //if the tool doesn't have ng-app constiable you need to put this constible in true
+
         browser.ignoreSynchronization = true;
 
     },

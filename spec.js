@@ -3,7 +3,7 @@ const Common = require('./pageobj/common');
 const { Logger } = require('./config/Logger');
 
 describe('Automation Exercise\n', () => {
-	beforeAll(async () => {
+	beforeAll(() => {
 		common = new Common();
 		browser.waitForAngularEnabled(false);
 		Logger.info('fetching site');
@@ -16,7 +16,7 @@ describe('Automation Exercise\n', () => {
 		common.logInButton.click();
 	});
 
-	it('Adding a new client', async () => {
+	it('Adding a new client',  () => {
 		common.clickAddButton();
 		browser.sleep(1000);
 
@@ -28,9 +28,7 @@ describe('Automation Exercise\n', () => {
 		common.clickSaveButton();
 		browser.sleep(5000);
 
-		const title = await browser.getTitle();
-
-		expect(title).toBe('Dashboard');
+		expect(browser.getTitle()).toBe('Dashboard');
 		expect(element(by.buttonText('Ryssdal, Kai')).isPresent()).toBe(true);
 		expect(element(by.cssContainingText('.no-data-description', 'No Cash Flow in Base Plan')).isPresent()).toBe(true);
 		browser.takeScreenshot();
@@ -40,16 +38,16 @@ describe('Automation Exercise\n', () => {
 		common.clickAddButton();
 		expect(element(by.cssContainingText('.add-button-menu', 'Planning Essentials')).isPresent()).toBe(true);
 		common.clickGoalsMenuButton();
-		browser.sleep(1000);
+		browser.sleep(500);
 		expect(element(by.cssContainingText('.col-xs-8', 'Goals')).isPresent()).toBe(true);
 		common.preretirementMenuButtonV2.click();
-		browser.sleep(1000);
+		browser.sleep(500);
 
 		Logger.info('entering pre-retirement amount');
 		element(by.id('basicExpenseInputAmount')).sendKeys('1000');
 
 		common.clickSaveButton();
-		browser.sleep(5000);
+		browser.sleep(3000);
 
 		element(by.cssContainingText('.accordion-label', 'Goals')).click();
 
@@ -64,17 +62,17 @@ describe('Automation Exercise\n', () => {
 		common.clickAddButton();
 		expect(element(by.cssContainingText('.add-button-menu', 'Planning Essentials')).isPresent()).toBe(true);
 		common.clickIncomeMenuButton();
-		browser.sleep(1000);
+		browser.sleep(500);
 		expect(element(by.cssContainingText('.col-xs-8', 'Income')).isPresent()).toBe(true);
 		common.employmentMenuButtonV2.click();
-		browser.sleep(1000);
+		browser.sleep(500);
 
 		Logger.info('entering new employment data');
 		element(by.id('employmentInputName')).sendKeys('Voyant');
 		element(by.id('employmentInputSalary')).sendKeys('110000');
 
 		common.clickSaveButton();
-		browser.sleep(5000);
+		browser.sleep(2000);
 
 		element(by.cssContainingText('.accordion-label', 'Income')).click();
 
@@ -90,17 +88,17 @@ describe('Automation Exercise\n', () => {
 		common.clickAddButton();
 		expect(element(by.cssContainingText('.add-button-menu', 'Planning Essentials')).isPresent()).toBe(true);
 		common.clickInsuranceMenuButton();
-		browser.sleep(1000);
+		browser.sleep(500);
 		expect(element(by.cssContainingText('.col-xs-8', 'Insurance')).isPresent()).toBe(true);
 		common.termlifeMenuButtonV2.click();
-		browser.sleep(1000);
+		browser.sleep(500);
 
 		Logger.info('entering new insurance data');
 		element(by.id('termLifeName')).sendKeys('Hi-Fidelity');
 		element(by.cssContainingText('option', 'Voyant')).click();
 
 		common.clickSaveButton();
-		browser.sleep(5000);
+		browser.sleep(2000);
 
 		element(by.cssContainingText('.accordion-label', 'Insurance')).click();
 
