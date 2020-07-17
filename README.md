@@ -7,5 +7,5 @@ webdriver-manager start
 ### If Protractor is installed:
 npm install package.json
 
-### Once installed run to kick off the program:
+### Once installed run:
 protractor conf.js
